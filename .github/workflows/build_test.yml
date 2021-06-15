@@ -39,3 +39,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+      # pytest测试
+      - name: use pytest to test
+        run: |
+          pip install pytest
+          pytest
