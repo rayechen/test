@@ -41,6 +41,11 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           
+      # 拉取测试代码
+      - name: pull test code from github
+        run: |
+          git clone https://github.com/rayechen/rayechen.git
+          
       # pytest测试
       - name: use pytest to test
         run: |
