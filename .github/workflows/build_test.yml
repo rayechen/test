@@ -52,4 +52,5 @@ jobs:
       - name: use pytest to test
         run: |
           pip install pytest
+          cd ..
           pytest rayechen
