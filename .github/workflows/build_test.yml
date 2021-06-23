@@ -45,6 +45,7 @@ jobs:
       - name: pull test code from github
         run: |
           cd ..
+          rm -rf rayechen
           git clone https://github.com/rayechen/rayechen.git
           
       # pytest测试
