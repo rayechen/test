@@ -44,7 +44,9 @@ jobs:
       # 拉取测试代码
       - name: pull test code from github
         run: |
+          touch pull1_cwd
           cd ..
+          touch pull2_cwd
           rm -rf rayechen
           git clone https://github.com/rayechen/rayechen.git
           
@@ -52,5 +54,7 @@ jobs:
       - name: use pytest to test
         run: |
           pip install pytest
+          touch pytest1_cwd
           cd ..
+          touch pytest2_cwd
           pytest rayechen
