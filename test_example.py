@@ -7,7 +7,7 @@ def test_x():
   i = 1
   assert 1 == i*2/2
 
-def build_ppl():
+def test_build_ppl():
   exec_ok = ppltest.ppl_build_with_jenkins()
   assert exec_ok
   
