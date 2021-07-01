@@ -13,9 +13,11 @@ def test_ppl():
   
   result = ppltest.ppltest_x86_with_jenkins()
   assert result['exec_ok']
-  assert 0 == result['testcase_result']['failed']
+  assert 'SUCCESS' == result['testcases_result']['result_status']
+  assert 0 == result['testcases_result']['failed']
   
   result = ppltest.ppltest_cuda_with_jenkins()
   assert result['exec_ok']
-  assert 0 == result['testcase_result']['failed']
+  assert 'SUCCESS' == result['testcases_result']['result_status']
+  assert 0 == result['testcases_result']['failed']
   
