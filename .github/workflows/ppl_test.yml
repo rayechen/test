@@ -31,7 +31,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Copy ppl_test.py
         run: |
-          copy ../../../ppl_test.py ./
+          cp ../../../ppl_test.py ./
           
       # pytest测试
       - name: use pytest to test
