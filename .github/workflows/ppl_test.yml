@@ -32,22 +32,23 @@ jobs:
       - name: Prepare Test Env
         run: |
           cp ../../ppltest.py ./
-          pip install pytest
+          cp ../../test_ppl.py ./
+          #pip install pytest
           
       # ppl build
       - name: ppl build
         run: |
-          pytest test_example.py::test_build_ppl
+          pytest test_ppl.py::test_build_ppl
           
       # ppl x86 test
       - name: ppl x86 test
         run: |
-          pytest test_example.py::test_ppl_x86
+          pytest test_ppl.py::test_ppl_x86
           
       # ppl cuda test
       - name: ppl cuda test
         run: |
-          pytest test_example.py::test_ppl_cuda
+          pytest test_ppl.py::test_ppl_cuda
           
           
           
