@@ -37,7 +37,7 @@ jobs:
       # ppl build
       - name: ppl build
         run: |
-          pytest test_example.py::build_ppl
+          pytest test_example.py::test_build_ppl
           
       # ppl x86 test
       - name: ppl x86 test
