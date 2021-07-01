@@ -8,8 +8,8 @@ def test_x():
   assert 1 == i*2/2
 
 def test_ppl():
-  result = ppltest.ppl_build_with_jenkins()
-  assert result['exec_ok']
+  exec_ok = ppltest.ppl_build_with_jenkins()
+  assert exec_ok
   
   result = ppltest.ppltest_x86_with_jenkins()
   assert result['exec_ok']
