@@ -10,3 +10,7 @@ print(args.github_run_id, type(args.github_run_id))
 print(args.github_run_number, type(args.github_run_number))
 print(args.sha, type(args.sha))
 
+print('sleeping 50s...')
+import time
+time.sleep(50)
+
