@@ -13,5 +13,6 @@ print(args.sha, type(args.sha))
 # print('sleeping 50s...')
 # import time
 # time.sleep(50)
-return -1
+import sys
+sys.exit(-1)
 
