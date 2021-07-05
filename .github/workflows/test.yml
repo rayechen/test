@@ -115,6 +115,8 @@ jobs:
           echo $(pwd)
           echo $(ls)
           echo $(ls ../)
+          echo $(ls ../../)
+          echo $(ls ../../../)
           python run_test.py --github_run_id $GITHUB_RUN_ID --github_run_number $GITHUB_RUN_NUMBER --sha $GITHUB_SHA
           #python test_example.py
       
