@@ -19,4 +19,5 @@ def print_params():
 
 if __name__ == "__main__":
   print_params()
-  return -1
+  import sys
+  sys.exit(-1)
