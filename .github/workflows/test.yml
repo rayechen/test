@@ -30,13 +30,23 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJSON(matrix) }}
         run: echo "$MATRIX_CONTEXT"
+      - name: show env
+        run: |
+          echo "GITHUB_RUN_ID: $GITHUB_RUN_ID."
+          echo "GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER."
+          echo "GITHUB_JOB: $GITHUB_JOB."
         
   job_prod-check:
     needs: [job_output-test, job_one]
     if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Deploying to production server on branch $GITHUB_REF"
+      - name: check
+        run: |
+          echo "Deploying to production server on branch $GITHUB_REF"
+          echo "GITHUB_RUN_ID: $GITHUB_RUN_ID."
+          echo "GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER."
+          echo "GITHUB_JOB: $GITHUB_JOB."
       
   job_output-test:
     name: job of output testing
@@ -48,6 +58,9 @@ jobs:
         run: |
             echo '::set-output name=DogName::erhei'
             echo '::set-output name=CatName::tommy'
+            echo "GITHUB_RUN_ID: $GITHUB_RUN_ID."
+            echo "GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER."
+            echo "GITHUB_JOB: $GITHUB_JOB."
         id: set-my-pets-name
         env:
           step_name: Set my pets name
