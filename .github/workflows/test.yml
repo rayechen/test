@@ -65,9 +65,29 @@ jobs:
         if: ${{ env.my_dog_name == 'erhei' }}
         run: |
           echo "Hello $my_name, Your dog's name is erhei! ${{ env.my_cat_name }} is also nice."
-          echo "job_output-test.env.job_name is : ${{ job_output-test.env.job_name }}"
         env:
          my_name: raye
-      
+      - name: show the git ENVs
+        run: |
+          echo "CI: $CI."
+          echo "GITHUB_WORKFLOW: $GITHUB_WORKFLOW."
+          echo "GITHUB_RUN_ID: $GITHUB_RUN_ID."
+          echo "GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER."
+          echo "GITHUB_JOB: $GITHUB_JOB."
+          echo "GITHUB_ACTION: $GITHUB_ACTION."
+          echo "GITHUB_ACTION_PATH: $GITHUB_ACTION_PATH."
+          echo "GITHUB_ACTIONS: $GITHUB_ACTIONS."
+          echo "GITHUB_ACTOR: $GITHUB_ACTOR."
+          echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY."
+          echo "GITHUB_EVENT_NAME: $GITHUB_EVENT_NAME."
+          echo "GITHUB_EVENT_PATH: $GITHUB_EVENT_PATH."
+          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE."
+          echo "GITHUB_SHA: $GITHUB_SHA."
+          echo "GITHUB_REF: $GITHUB_REF."
+          echo "GITHUB_HEAD_REF: $GITHUB_HEAD_REF."
+          echo "GITHUB_BASE_REF: $GITHUB_BASE_REF."
+          echo "GITHUB_SERVER_URL: $GITHUB_SERVER_URL."
+          echo "GITHUB_API_URL: $GITHUB_API_URL."
+          echo "GITHUB_GRAPHQL_URL: $GITHUB_GRAPHQL_URL."     
       
       
