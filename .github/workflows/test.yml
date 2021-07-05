@@ -1,5 +1,5 @@
+name: Test Actions Objects
 on: push
-
 jobs:
   job_one:
     needs: job_output-test
