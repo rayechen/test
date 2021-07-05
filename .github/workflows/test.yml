@@ -48,3 +48,20 @@ jobs:
         id: set-my-pets-name
       - name: Get my pets name
         run: echo "My dog name is ${{steps.set-my-pets-name.outputs.DogName}}. My cat name is ${{steps.set-my-pets-name.outputs.CatName}}."
+        
+  job_env-test:
+    needs: job_output-test
+    name: job of env testing
+    runs-on: ubuntu-latest
+    env:
+      my_dog_name: erhei
+      my_cat_name: tommy
+    steps:
+      - name: "Heel world when it's erhei"
+        if: ${{ env.my_dog_name == 'erhei' }}
+        run: echo "Hello $my_name, Your dog's name is erhei!"
+        env:
+         my_name: raye
+      
+      
+      
