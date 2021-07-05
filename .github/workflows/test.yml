@@ -36,6 +36,7 @@ jobs:
       - run: echo "Deploying to production server on branch $GITHUB_REF"
       
   output-test:
+    name: job of output testing
     runs-on: ubuntu-latest
     steps:
       - name: Set my pets name
@@ -43,5 +44,5 @@ jobs:
             echo '::set-output name=DogName::erhei'
             echo '::set-output name=CatName::tommy'
         id: set-my-pets-name
-      - name: Get my dog name
+      - name: Get my pets name
         run: echo "My dog name is ${{steps.set-my-pets-name.outputs.DogName}}. My cat name is ${{steps.set-my-pets-name.outputs.CatName}}."
