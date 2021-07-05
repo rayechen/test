@@ -1,7 +1,8 @@
 on: push
 
 jobs:
-  one:
+  job_one:
+    needs: job_output-test
     runs-on: ubuntu-latest
     steps:
       - name: Dump GitHub context
@@ -29,13 +30,14 @@ jobs:
           MATRIX_CONTEXT: ${{ toJSON(matrix) }}
         run: echo "$MATRIX_CONTEXT"
         
-  prod-check:
+  job_prod-check:
+    needs: [job_output-test, job_one]
     if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo "Deploying to production server on branch $GITHUB_REF"
       
-  output-test:
+  job_output-test:
     name: job of output testing
     runs-on: ubuntu-latest
     steps:
