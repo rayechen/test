@@ -102,6 +102,17 @@ jobs:
           echo "GITHUB_BASE_REF: $GITHUB_BASE_REF."
           echo "GITHUB_SERVER_URL: $GITHUB_SERVER_URL."
           echo "GITHUB_API_URL: $GITHUB_API_URL."
-          echo "GITHUB_GRAPHQL_URL: $GITHUB_GRAPHQL_URL."     
+          echo "GITHUB_GRAPHQL_URL: $GITHUB_GRAPHQL_URL." 
+          
+  job_run_func_test:
+    needs: job_output-test
+    name: run a func test
+    runs-on: ubuntu-latest
+    steps:
+      - name: pass env to func
+        run: |
+          pip install pytest
+          python run_test.py --github_run_id $GITHUB_RUN_ID --github_run_number $GITHUB_RUN_NUMBER --sha $GITHUB_SHA
+          #python test_example.py
       
       
