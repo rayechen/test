@@ -34,3 +34,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Deploying to production server on branch $GITHUB_REF"
+      
+  output-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set my dog name
+        run: echo '::set-output name=DogName::erhei'
+        id: set-my-dog-name
+      - name: Get my dog name
+        run: echo "My dog name is ${{steps.set-my-dog-name.outputs.DogName}}"
