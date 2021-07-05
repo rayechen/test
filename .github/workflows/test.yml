@@ -40,12 +40,16 @@ jobs:
   job_output-test:
     name: job of output testing
     runs-on: ubuntu-latest
+    env:
+      job_name: job of output testing
     steps:
       - name: Set my pets name
         run: |
             echo '::set-output name=DogName::erhei'
             echo '::set-output name=CatName::tommy'
         id: set-my-pets-name
+        env:
+          step_name: Set my pets name
       - name: Get my pets name
         run: echo "My dog name is ${{steps.set-my-pets-name.outputs.DogName}}. My cat name is ${{steps.set-my-pets-name.outputs.CatName}}."
         
@@ -61,7 +65,7 @@ jobs:
         if: ${{ env.my_dog_name == 'erhei' }}
         run: |
           echo "Hello $my_name, Your dog's name is erhei! ${{ env.my_cat_name }} is also nice."
-          echo "job_one.steps.env.GITHUB_CONTEXT is : ${{ job_one.steps.env.GITHUB_CONTEXT }}"
+          echo "job_output-test.env.job_name is : ${{ job_output-test.env.job_name }}"
         env:
          my_name: raye
       
