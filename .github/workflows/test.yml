@@ -38,8 +38,8 @@ jobs:
   output-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Set my dog name
-        run: echo '::set-output name=DogName::erhei'
-        id: set-my-dog-name
+      - name: Set my pets name
+        run: echo '::set-output name=DogName::erhei,name=CatName::tommy'
+        id: set-my-pets-name
       - name: Get my dog name
-        run: echo "My dog name is ${{steps.set-my-dog-name.outputs.DogName}}"
+        run: echo "My dog name is ${{steps.set-my-pets-name.outputs.DogName}}. My cat name is ${{steps.set-my-pets-name.outputs.CatName}}."
