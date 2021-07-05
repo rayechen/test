@@ -7,7 +7,13 @@ def test_x():
   i = 1
   assert 1 == i*2/2
 
-def test_build_ppl():
+def test_build_ppl(github_sha, github_run_id, github_run_number):
+  print(github_sha)
+  print(github_run_id)
+  print(github_run_number)
+  print('sleeping 50s...'
+  import time
+  time.sleep(50)
   exec_ok = ppltest.ppl_build_with_jenkins()
   assert exec_ok
   
