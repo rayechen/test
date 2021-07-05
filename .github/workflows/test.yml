@@ -59,7 +59,9 @@ jobs:
     steps:
       - name: "Heel world when it's erhei"
         if: ${{ env.my_dog_name == 'erhei' }}
-        run: echo "Hello $my_name, Your dog's name is erhei! ${{ env.my_cat_name }} is also nice."
+        run: |
+          echo "Hello $my_name, Your dog's name is erhei! ${{ env.my_cat_name }} is also nice."
+          echo "job_one.steps.env.GITHUB_CONTEXT is : ${{ job_one.steps.env.GITHUB_CONTEXT }}"
         env:
          my_name: raye
       
