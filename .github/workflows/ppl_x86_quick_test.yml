@@ -30,7 +30,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          path: $GITHUB_RUN_ID
+          path: ${{ $GITHUB_RUN_ID }}
       
       # Runs a set of commands using the runners shell
       #- name: Build
