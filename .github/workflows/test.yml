@@ -1,5 +1,5 @@
 name: Test Actions Objects
-on: [push, workflow_dispatch]
+on: [workflow_dispatch] # push
 # Allows you to run this workflow manually from the Actions tab
 jobs:
   job_one:
