@@ -2,14 +2,14 @@
 name: ppl_x86_quick_test
 
 # Controls when the action will run. 
-on:
+on: [push, workflow_dispatch]
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: 
-      - master
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:
+  #push:
+  #  branches: 
+  #    - master
+  #pull_request:
+  #  branches: [ main ]
+  #workflow_dispatch:
 
 jobs:
   # This workflow contains a single job called "build"
@@ -24,7 +24,7 @@ jobs:
       - name: Create Check out directory
         run: |
           echo "GITHUB_RUN_ID: $GITHUB_RUN_ID."
-          #mkdir $GITHUB_RUN_ID
+          mkdir $GITHUB_RUN_ID
           
       - name: Checkout
         uses: actions/checkout@v2
