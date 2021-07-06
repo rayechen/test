@@ -24,10 +24,15 @@ jobs:
       - name: Create Check out directory
         run: |
           echo "GITHUB_RUN_ID: $GITHUB_RUN_ID."
-          mkdir "$GITHUB_RUN_ID"
+          echo $(pwd)
+          echo "cur dir: $(ls)"
+          mkdir test123
+          echo "cur dir: $(ls)"
+          mkdir $GITHUB_RUN_ID
+          echo "cur dir: $(ls)"
           
-      - name: Checkout
-        uses: actions/checkout@v2
+      #- name: Checkout
+      #  uses: actions/checkout@v2
         #with:
         #  path: $GITHUB_RUN_ID
       
