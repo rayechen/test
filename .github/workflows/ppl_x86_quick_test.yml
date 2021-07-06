@@ -33,10 +33,10 @@ jobs:
           path: ${{ github.run_id }}
       
       # Runs a set of commands using the runners shell
-      #- name: Build
-      #  run: |
-      #    source /opt/rh/devtoolset-9/enable
-      #    ./build-for-test.sh x64
+      - name: Build
+        run: |
+          source /opt/rh/devtoolset-9/enable
+          /home/sensetime/jenkins_home/workspace/PPL_build/ppl.nn/build.sh x64
       
       #- name: quick test
       #  uses: actions/checkout@v2
