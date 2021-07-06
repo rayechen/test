@@ -43,6 +43,7 @@ jobs:
     steps:
       - name: check
         run: |
+          echo $(pwd)
           echo "Deploying to production server on branch $GITHUB_REF"
           echo "GITHUB_RUN_ID: $GITHUB_RUN_ID."
           echo "GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER."
@@ -76,6 +77,20 @@ jobs:
       my_dog_name: erhei
       my_cat_name: tommy
     steps:
+      - name: echo pwd
+        run: |
+          echo $(pwd)
+          cd ..
+          echo $(pwd)
+          
+      - name: echo pwd2
+        run: |
+          echo $(pwd)
+          
+      - name: echo pwd3
+        run: |
+          echo $(pwd)
+          
       - name: "Heel world when it's erhei"
         if: ${{ env.my_dog_name == 'erhei' }}
         run: |
