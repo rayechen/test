@@ -56,6 +56,7 @@ jobs:
     steps:
       - name: Set my pets name
         run: |
+            echo $(pwd)
             echo '::set-output name=DogName::erhei'
             echo '::set-output name=CatName::tommy'
             echo "GITHUB_RUN_ID: $GITHUB_RUN_ID."
@@ -83,6 +84,8 @@ jobs:
          my_name: raye
       - name: show the git ENVs
         run: |
+          cd ..
+          echo $(pwd)
           echo "CI: $CI."
           echo "GITHUB_WORKFLOW: $GITHUB_WORKFLOW."
           echo "GITHUB_RUN_ID: $GITHUB_RUN_ID."
