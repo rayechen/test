@@ -23,12 +23,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Create Check out directory
         run: |
-          mkdir $GITHUB_RUN_ID
+          echo "GITHUB_RUN_ID: $GITHUB_RUN_ID."
+          #mkdir $GITHUB_RUN_ID
           
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          path: $GITHUB_RUN_ID
+        #with:
+        #  path: $GITHUB_RUN_ID
       
       # Runs a set of commands using the runners shell
       #- name: Build
