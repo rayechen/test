@@ -24,7 +24,7 @@ jobs:
       - name: Create Check out directory
         run: |
           echo "GITHUB_RUN_ID: $GITHUB_RUN_ID."
-          mkdir $GITHUB_RUN_ID
+          mkdir "$GITHUB_RUN_ID"
           
       - name: Checkout
         uses: actions/checkout@v2
