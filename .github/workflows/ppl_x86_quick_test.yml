@@ -2,14 +2,18 @@
 name: ppl_x86_quick_test
 
 # Controls when the action will run. 
-on: [push, workflow_dispatch]
+on: #[push, workflow_dispatch]
   # Triggers the workflow on push or pull request events but only for the main branch
-  #push:
-  #  branches: 
-  #    - master
-  #pull_request:
-  #  branches: [ main ]
-  #workflow_dispatch:
+  push:
+    branches: 
+      - master
+    paths-ignore:
+      - '.github/workflows/**'
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - '.github/workflows/**'
+  workflow_dispatch:
 
 jobs:
   # This workflow contains a single job called "build"
